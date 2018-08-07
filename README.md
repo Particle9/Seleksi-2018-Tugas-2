@@ -29,6 +29,14 @@
 
 7. Deadline pengumpulan tugas adalah __4 Agustus 2018 Pukul 23.59__
 
+### Prerequisite
+1. Python 3 or above, with library :
+      1. BeautifulSoup
+      2. json
+      3. pandas
+      4. flask
+       
+2. Google Chrome / Mozilla Firefox
 
 ### How To Use
 
@@ -38,7 +46,7 @@
 
 3. Open your browser and open localhost:5000
 
-4. Enjoy the dashboard
+4. Enjoy the dashboard :)
 
 <h1 align="center">
   <br>
