@@ -16,6 +16,22 @@
     color: white;
   }
 
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
   .wrapper {
     text-align: center;
   }
@@ -67,9 +83,15 @@
   <div class="wrapper">
     <section>
       <script>
+        var rateGenre = "<table><tr><td style='width: 1000px; color: black; text-align: center;'><strong>Genre Film</strong></td>";
+        rateGenre += "<td style='width: 1000px; color: black; text-align: center;'><strong>Rating</strong></td></tr>";
         {% for r in rate %}
-          document.write("<b>"+ {{r|tojson}}[0] + "<b> " + {{r|tojson}}[1] + " <br>" );
+          // document.write("<b>"+ {{r|tojson}}[0] + "<b> " + {{r|tojson}}[1] + " <br>" );
+          rateGenre +="<tr><td style='width: 1000px; text-align: left;'>" + {{r|tojson}}[0] + "</td>";
+          rateGenre +="<td style='width: 1000px; text-align: left;'>" + {{r|tojson}}[1] + "</td></tr>";
         {% endfor %}
+        rateGenre+="</table>";
+        document.write(rateGenre);
       </script>
     </section>
     <button class="button" onclick="location.href='/'"><span>Main Menu</span></button>

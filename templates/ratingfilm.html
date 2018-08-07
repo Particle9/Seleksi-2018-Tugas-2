@@ -16,6 +16,21 @@
     font-size: 35px;
     color: white;
   }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
   .wrapper {
     text-align: center;
   }
@@ -76,9 +91,17 @@
   <div class="wrapper">
     <section>
       <script>
+        var rateTable = "<table><tr><td style='width: 1000px; color: black; text-align: center;'><strong>Judul Film</strong></td>";
+        rateTable+= "<td style='width: 1000px; color: black; text-align: center;'><strong>Rating<strong></td></tr>";
+
         {% for rate in rating %}
-          document.write("<b>"+{{rate|tojson}}[0] + "<b>" + {{rate|tojson}}[1] + " <br>");
+          // document.write("<b>"+{{rate|tojson}}[0] + "<b>" + {{rate|tojson}}[1] + " <br>");
+          rateTable+="<tr><td style='width: 1000px; text-align: left;'>" + {{rate|tojson}}[0] + "</td>";
+          rateTable+="<td style='width: 1000px; text-align: left;'>" + {{rate|tojson}}[1] + "</td></tr>";
         {% endfor %}
+
+        rateTable+="</table>";
+        document.write(rateTable);
       </script>
     </section>
   </div>

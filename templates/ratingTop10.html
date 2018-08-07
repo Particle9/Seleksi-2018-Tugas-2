@@ -15,6 +15,21 @@
     font-size: 35px;
     color: white;
   }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 
   .wrapper {
     text-align: center;
@@ -67,9 +82,15 @@
   <div class="wrapper">
     <section>
       <script>
+        var rateActor = "<table><tr><td style='width: 1000px; color: black; text-align: center;'><strong>Nama Aktor</strong></td>";
+        rateActor+= "<td style='width: 1000px; color: black; text-align: center;'><strong>Rating</strong></td></tr>";
         {% for actor in top10 %}
-          document.write("<b>"+ {{actor|tojson}}[0] + "<b> " + {{actor|tojson}}[1] + " <br>" );
+          //document.write("<b>"+ {{actor|tojson}}[0] + "<b> " + {{actor|tojson}}[1] + " <br>" );
+          rateActor+="<tr><td style='width: 1000px; text-align: left;'>" + {{actor|tojson}}[0] + "</td>";
+          rateActor+="<td style='width: 1000px; text-align: left;'>" + {{actor|tojson}}[1] + "</td></tr>";
         {% endfor %}
+        rateActor+="</table>";
+        document.write(rateActor);
       </script>
     </section>
     <button class="button" onclick="location.href='/'"><span>Main Menu</span></button>
