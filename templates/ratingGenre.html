@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Visualisasi Rating Top 10 Aktor</title>
+  <title>Rating Genre Film</title>
   <style>
   * {
     box-sizing: border-box;
@@ -58,21 +58,21 @@
     opacity: 1;
     right: 0;
   }
-
-  img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
   </style>
 </head>
 <body>
   <header>
-    <h1>Visualisasi Rating Top 10 Aktor</h1>
+    <h1>Rating Genre Film</h1>
   </header>
-  <img src="static/Figure_2.png" alt="Histogram Rating Top 10 Aktor" width="1200" height="600" class="center">
   <div class="wrapper">
-    <button class="button" onclick="location.href='/'"><span>Back To Main Menu</span></button>
+    <section>
+      <script>
+        {% for r in rate %}
+          document.write("<b>"+ {{r|tojson}}[0] + "<b> " + {{r|tojson}}[1] + " <br>" );
+        {% endfor %}
+      </script>
+    </section>
+    <button class="button" onclick="location.href='/'"><span>Main Menu</span></button>
   </div>
 </body>
 </html>

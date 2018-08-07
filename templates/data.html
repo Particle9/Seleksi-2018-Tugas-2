@@ -17,6 +17,9 @@
     font-size: 35px;
     color: white;
   }
+  .wrapper {
+    text-align: center;
+  }
 
   /* Create two columns/boxes that floats next to each other */
   nav {
@@ -46,6 +49,14 @@
       clear: both;
   }
 
+  /* Style the footer */
+  footer {
+    background-color: #F08080;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
   </style>
 </head>
 <body>
@@ -56,9 +67,10 @@
     <nav>
       <ul>
         <li><a href="http://localhost:5000/ratingfilm">Rating Film</a></li>
-        <li><a href="#">Rating Genre Film</a></li>
+        <li><a href="http://localhost:5000/ratinggenre">Rating Genre Film</a></li>
         <li><a href="http://localhost:5000/visualgenre">Visualisasi Rating Genre Film</a></li>
-        <li><a href="#">Rating Top 10 Aktor</a></li>
+        <li><a href="http://localhost:5000/ratingaktor">Rating Seluruh Aktor</a></li>
+        <li><a href="http://localhost:5000/ratingTop10">Rating Top 10 Aktor</a></li>
         <li><a href="http://localhost:5000/visualaktor">Visualisasi Rating Top 10 Aktor</a></li>
       </ul>
     </nav>
@@ -68,9 +80,19 @@
       <p>Menampilkan judul film beserta rating film tersebut menurut <strong>imdb.com</strong>.</p>
       <h2>Rating Genre Film</h2>
       <p>Menampilkan daftar genre film dan rating genre film tersebut.</p>
-      <h2>Rating Top 50 Aktor</h2>
-      <p>Menampilkan nama aktor dan rating aktor tersebut dari rating film.</p>
+      <h2>Visualisasi Rating Genre Film</h2>
+      <p>Menampilkan grafik pengolahan rating genre film.</p>
+      <h2>Rating Seluruh Aktor</h2>
+      <p>Menampilkan semua nama aktor dari film-film dan menampilkan ratingnya.</p>
+      <h2>Rating Top 10 Aktor</h2>
+      <p>Menampilkan 10 nama aktor dengan rating tertinggi dari rating film.</p>
+      <h2>Visualisasi Rating Top 10 Aktor</h2>
+      <p>Menampilkan grafik pengolahan rating aktor.</p>
     </article>
   </section>
+  <footer>
+    <div class="wrapper">
+      <h3>Dibuat oleh : Yuly Haruka dan Aufa</h3>
+    </div>
 </body>
 </html>

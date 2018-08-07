@@ -65,14 +65,16 @@
 <body>
   <header><h1>Rating Aktor</h1></header>
   <section>
-    <script>
-      {% for actor in actorRate %}
-        document.write("<b>"+ {{actor|tojson}}[0] + "<b> " + {{actor|tojson}}[1] + " <br>" );
-      {% endfor %}
-    </script>
-  <section>
+    <div class="wrapper">
+      <script>
+        {% for actor in actorRate %}
+          document.write("<b>"+ {{actor|tojson}}[0] + "<b> " + {{actor|tojson}}[1] + " <br>" );
+        {% endfor %}
+      </script>
+    </div>
+  </section>
   <div class="wrapper">
-    <button class="button" onclick="location.href='/'"><span>Back To Main Menu</span></button>
+    <button class="button" onclick="location.href='/'"><span>Main Menu</span></button>
   </div>
 </body>
 </html>
