@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1">
+  <title>Data Visualization</title>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  /*Header Style*/
+  header {
+    background-color: #F08080;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  }
+
+  /* Create two columns/boxes that floats next to each other */
+  nav {
+    float: left;
+    width: 30%;
+    background: #E8DAEF;
+    padding: 20px;
+  }
+
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #FFFFFF;
+  }
+
+  /* Clear floats after the columns */
+  section:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Visualisasi Data Rating Aktor dan Film</h1>
+  </header>
+  <section>
+    <nav>
+      <ul>
+        <li><a href="http://localhost:5000/ratingfilm">Rating Film</a></li>
+        <li><a href="#">Rating Genre Film</a></li>
+        <li><a href="http://localhost:5000/visualgenre">Visualisasi Rating Genre Film</a></li>
+        <li><a href="#">Rating Top 10 Aktor</a></li>
+        <li><a href="http://localhost:5000/visualaktor">Visualisasi Rating Top 10 Aktor</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h2>Rating Film</h2>
+      <p>Menampilkan judul film beserta rating film tersebut menurut <strong>imdb.com</strong>.</p>
+      <h2>Rating Genre Film</h2>
+      <p>Menampilkan daftar genre film dan rating genre film tersebut.</p>
+      <h2>Rating Top 50 Aktor</h2>
+      <p>Menampilkan nama aktor dan rating aktor tersebut dari rating film.</p>
+    </article>
+  </section>
+</body>
+</html>

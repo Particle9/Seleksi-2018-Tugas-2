@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Rating Film</title>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  /*Header Style*/
+  header {
+    background-color: #F08080;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+  }
+  /* Style the footer */
+  footer {
+    background-color: #F08080;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rating Film</h1>
+  </header>
+  <section>
+    <script>
+      {% for rate in rating %}
+        document.write("<b>"+{{rate|tojson}}[0] + "<b>" + "&emsp;&emsp;&emsp;&emsp;" + {{rate|tojson}}[1] + " <br>");
+      {% endfor %}
+    </script>
+  </section>
+  <footer>
+    <a href="/">Back To Main Menu</a>
+  </footer>
+</body>
+</html>
