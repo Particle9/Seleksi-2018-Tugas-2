@@ -43,26 +43,15 @@ for x in film_data :
 for k,v in genre_ratings.items() :
     genre_ratings[k] = v/genre_rating_count[k]
 
-# actor_ratings = {}
-# actor_rating_count = {}
-# for x in film_data :
-#     for y in x['casts'] :
-#         if y['actor'] in actor_ratings :
-#             actor_ratings[y['actor']] += x['rating']
-#             actor_rating_count[y['actor']] += 1
-#         else :
-#             actor_ratings[y['actor']] = x['rating']
-#             actor_rating_count[y['actor']] = 1
-# for k,v in actor_ratings.items() :
-#     actor_ratings[k] = v/actor_rating_count[k]
+genreRatingList =[]
+for genre in genre_ratings :
+    genreRatingList.append((genre, genre_ratings[genre]))
 
 actor_ratings = CalculateRate(film_data)
 # Membuat list yang menyimpan nama aktor dan rating aktor tersebut
 actorRatingList = []
 for actor in actor_ratings:
     actorRatingList.append((actor, actor_ratings[actor]))
-
-print (actorRatingList)
 
 # Mengurutkan aktor sesuai dengan rating
 # Pengurutan dilakukan dari rating besar ke kecil
@@ -88,9 +77,22 @@ def rating() :
     ratingFilm = []
     for rate in film_data :
         ratingFilm.append((str(rate['title'].replace("'"," ")), float(rate['rating'])))
-    # print (ratingFilm)
     # Membuka ratingfilm.html untuk halaman
     return render_template("ratingfilm.html", rating=ratingFilm)
+
+@app.route('/ratingTop10', methods=['GET'])
+def actorTop() :
+    # Mengirimkan file data.json untuk menampilkan nama aktor dengan rating 10 tertinggi
+    ratingTop10 =[]
+    ratingTop10 = topTen
+    return render_template("ratingTop10.html", top10=ratingTop10)
+
+@app.route('/ratinggenre', methods=['GET'])
+def ratingGenre() :
+    # Mengirimkan file data.json untuk menampilkan rating dari genre film
+    rateGenre = []
+    rateGenre = genreRatingList
+    return render_template("ratingGenre.html", rate=rateGenre)
 
 @app.route('/ratingaktor', methods=['GET'])
 def actor() :
