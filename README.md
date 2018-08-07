@@ -29,6 +29,17 @@
 
 7. Deadline pengumpulan tugas adalah __4 Agustus 2018 Pukul 23.59__
 
+
+### How To Use
+
+1. Open terminal where you download all this file 
+
+2. Compile data_visualization.py to start the local server
+
+3. Open your browser and open localhost:5000
+
+4. Enjoy the dashboard
+
 <h1 align="center">
   <br>
   Selamat BerEksplorasi!
